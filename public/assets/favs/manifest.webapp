@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "name": "tradeling.com",
+  "description": "TRADELING.COM.",
+  "icons": {
+    "60": "/assets/favs/firefox_app_60x60.png",
+    "128": "/assets/favs/firefox_app_128x128.png",
+    "512": "/assets/favs/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "tradeling.com Team",
+    "url": "https://www.tradeling.com/"
+  }
+}
