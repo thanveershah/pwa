@@ -14,6 +14,10 @@ export default function Home() {
 
     // @ts-ignore
     window.addEventListener("beforeinstallprompt", eventHandler, errorHandler);
+
+    setTimeout(() => {
+      instalar();
+    }, 5000);
   }, []);
 
   async function instalar() {
@@ -26,10 +30,7 @@ export default function Home() {
 
   return (
     <>
-      <button
-        onClick={instalar}
-        className="bg-orange-600 p-20 absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
-      >
+      <button className="bg-orange-600 p-20 absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
         PWA
       </button>
     </>

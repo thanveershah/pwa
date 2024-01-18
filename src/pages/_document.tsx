@@ -4,117 +4,218 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <meta
-        name="viewport"
-        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
-      />
-      <link rel="manifest" href="/manifest.json" />
-      <meta name="application-name" content="PWA App" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="apple-mobile-web-app-title" content="PWA App" />
-      <meta name="description" content="Best PWA App in the world" />
-      <meta name="format-detection" content="telephone=no" />
-      <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-      <meta name="msapplication-TileColor" content="#2B5797" />
-      <meta name="msapplication-tap-highlight" content="no" />
-      <meta name="theme-color" content="#000000" />
-
-      <link rel="apple-touch-icon" href="/icons/touch-icon-iphone.png" />
-      <link
-        rel="apple-touch-icon"
-        sizes="152x152"
-        href="/icons/touch-icon-ipad.png"
-      />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/icons/touch-icon-iphone-retina.png"
-      />
-      <link
-        rel="apple-touch-icon"
-        sizes="167x167"
-        href="/icons/touch-icon-ipad-retina.png"
-      />
-
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/icons/favicon-32x32.png"
-      />
+      <link rel="shortcut icon" href="/assets/favs/favicon.ico" />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="/icons/favicon-16x16.png"
+        href="/assets/favs/favicon-16x16.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/assets/favs/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="48x48"
+        href="/assets/favs/favicon-48x48.png"
       />
       <link rel="manifest" href="/manifest.json" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="theme-color" content="#181859" />
+      <meta name="application-name" content="tradeling.com" />
       <link
-        rel="mask-icon"
-        href="/icons/safari-pinned-tab.svg"
-        color="#5bbad5"
+        rel="apple-touch-icon"
+        sizes="57x57"
+        href="/assets/favs/apple-touch-icon-57x57.png"
       />
-      <link rel="shortcut icon" href="/favicon.ico" />
       <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+        rel="apple-touch-icon"
+        sizes="60x60"
+        href="/assets/favs/apple-touch-icon-60x60.png"
       />
-
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:url" content="https://yourdomain.com" />
-      <meta name="twitter:title" content="PWA App" />
-      <meta name="twitter:description" content="Best PWA App in the world" />
+      <link
+        rel="apple-touch-icon"
+        sizes="72x72"
+        href="/assets/favs/apple-touch-icon-72x72.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="76x76"
+        href="/assets/favs/apple-touch-icon-76x76.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="114x114"
+        href="/assets/favs/apple-touch-icon-114x114.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="120x120"
+        href="/assets/favs/apple-touch-icon-120x120.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="144x144"
+        href="/assets/favs/apple-touch-icon-144x144.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="152x152"
+        href="/assets/favs/apple-touch-icon-152x152.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="167x167"
+        href="/assets/favs/apple-touch-icon-167x167.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="/assets/favs/apple-touch-icon-180x180.png"
+      />
+      <link
+        rel="apple-touch-icon"
+        sizes="1024x1024"
+        href="/assets/favs/apple-touch-icon-1024x1024.png"
+      />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta
-        name="twitter:image"
-        content="https://yourdomain.com/icons/android-chrome-192x192.png"
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
       />
-      <meta name="twitter:creator" content="@DavidWShadow" />
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="PWA App" />
-      <meta property="og:description" content="Best PWA App in the world" />
-      <meta property="og:site_name" content="PWA App" />
-      <meta property="og:url" content="https://yourdomain.com" />
+      <meta name="apple-mobile-web-app-title" content="tradeling.com" />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="/assets/favs/apple-touch-startup-image-640x1136.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="/assets/favs/apple-touch-startup-image-750x1334.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="/assets/favs/apple-touch-startup-image-828x1792.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+        href="/assets/favs/apple-touch-startup-image-1125x2436.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+        href="/assets/favs/apple-touch-startup-image-1242x2208.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+        href="/assets/favs/apple-touch-startup-image-1242x2688.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="/assets/favs/apple-touch-startup-image-1536x2048.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="/assets/favs/apple-touch-startup-image-1668x2224.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="/assets/favs/apple-touch-startup-image-1668x2388.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="/assets/favs/apple-touch-startup-image-2048x2732.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+        href="/assets/favs/apple-touch-startup-image-1620x2160.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="/assets/favs/apple-touch-startup-image-1136x640.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="/assets/favs/apple-touch-startup-image-1334x750.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="/assets/favs/apple-touch-startup-image-1792x828.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+        href="/assets/favs/apple-touch-startup-image-2436x1125.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+        href="/assets/favs/apple-touch-startup-image-2208x1242.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)"
+        href="/assets/favs/apple-touch-startup-image-2688x1242.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="/assets/favs/apple-touch-startup-image-2048x1536.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="/assets/favs/apple-touch-startup-image-2224x1668.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="/assets/favs/apple-touch-startup-image-2388x1668.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="/assets/favs/apple-touch-startup-image-2732x2048.png"
+      />
+      <link
+        rel="apple-touch-startup-image"
+        media="(device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+        href="/assets/favs/apple-touch-startup-image-2160x1620.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="228x228"
+        href="/assets/favs/coast-228x228.png"
+      />
+      <meta name="msapplication-TileColor" content="#fff" />
       <meta
-        property="og:image"
-        content="https://yourdomain.com/icons/apple-touch-icon.png"
+        name="msapplication-TileImage"
+        content="/assets/favs/mstile-144x144.png"
       />
-
-      <link
-        rel="apple-touch-startup-image"
-        href="/images/apple_splash_2048.png"
-        sizes="2048x2732"
+      <meta
+        name="msapplication-config"
+        content="/assets/favs/browserconfig.xml"
       />
       <link
-        rel="apple-touch-startup-image"
-        href="/images/apple_splash_1668.png"
-        sizes="1668x2224"
-      />
-      <link
-        rel="apple-touch-startup-image"
-        href="/images/apple_splash_1536.png"
-        sizes="1536x2048"
-      />
-      <link
-        rel="apple-touch-startup-image"
-        href="/images/apple_splash_1125.png"
-        sizes="1125x2436"
-      />
-      <link
-        rel="apple-touch-startup-image"
-        href="/images/apple_splash_1242.png"
-        sizes="1242x2208"
-      />
-      <link
-        rel="apple-touch-startup-image"
-        href="/images/apple_splash_750.png"
-        sizes="750x1334"
-      />
-      <link
-        rel="apple-touch-startup-image"
-        href="/images/apple_splash_640.png"
-        sizes="640x1136"
+        rel="yandex-tableau-widget"
+        href="/assets/favs/yandex-browser-manifest.json"
       />
 
       <body>
