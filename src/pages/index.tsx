@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 export default function Home() {
-  const beforeInstallPrompt = useRef(null);
+  const beforeInstallPrompt = useRef<null | any>(null);
 
   useEffect(() => {
     function eventHandler(event: null) {
@@ -16,10 +16,9 @@ export default function Home() {
     window.addEventListener("beforeinstallprompt", eventHandler, errorHandler);
   }, []);
 
-  function instalar() {
+  async function instalar() {
     if (beforeInstallPrompt.current) {
-      // @ts-ignore
-      beforeInstallPrompt.current?.prompt();
+      await beforeInstallPrompt.current?.prompt();
       beforeInstallPrompt.current = null;
     }
   }
@@ -28,9 +27,9 @@ export default function Home() {
     <>
       <button
         onClick={instalar}
-        className="bg-orange-600 p-20 absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
+        className="bg-orange-600 p-4 rounded absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
       >
-        PWA
+        Install PWA
       </button>
     </>
   );
