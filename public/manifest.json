@@ -10,6 +10,9 @@
   "scope": "/",
   "theme_color": "#fb641e",
   "background_color": "#d9d9d9",
+  "customURLScheme": "yourpwacustomscheme",
+  "related_applications": [],
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/assets/favs/android-chrome-36x36.png",
