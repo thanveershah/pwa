@@ -16,22 +16,20 @@ const useFcmToken = () => {
           // Retrieve the notification permission status
           const permission = await Notification.requestPermission();
           setNotificationPermissionStatus(permission);
-          alert(permission);
-          // Check if permission is granted before retrieving the token
-          //   if (permission === "granted") {
-          //   }
-          const currentToken = await getToken(messaging, {
-            vapidKey:
-              "BN6LatOOuE5GzfqN9Rng0OUnC_DHmZ3ExELm5MzI3NdTx12Z0E3KB9TArQHTB-mGrTtDoNxQVre267U9xqyJ8Is",
-          });
-          alert(currentToken);
 
-          if (currentToken) {
-            setToken(currentToken);
-          } else {
-            alert(
-              "No registration token available. Request permission to generate one."
-            );
+          // Check if permission is granted before retrieving the token
+          if (permission === "granted") {
+            const currentToken = await getToken(messaging, {
+              vapidKey:
+                "BN6LatOOuE5GzfqN9Rng0OUnC_DHmZ3ExELm5MzI3NdTx12Z0E3KB9TArQHTB-mGrTtDoNxQVre267U9xqyJ8Is",
+            });
+            if (currentToken) {
+              setToken(currentToken);
+            } else {
+              console.log(
+                "No registration token available. Request permission to generate one."
+              );
+            }
           }
         }
       } catch (error) {
