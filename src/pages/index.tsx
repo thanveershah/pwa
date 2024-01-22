@@ -68,6 +68,10 @@ export default function Home() {
 
   return (
     <>
+      {notificationPermissionStatus}
+      <br />
+      {fcmToken}
+      <br />
       {showButton ? (
         <button
           onClick={instalar}
@@ -80,8 +84,12 @@ export default function Home() {
           PWA Installed Successfully
         </p>
       )}
+      <br />
 
-      <button onClick={requestPermission}>
+      <button
+        className="bg-blue-600 p-4 rounded absolute left-[50%] top-[60%] translate-x-[-50%] translate-y-[-50%]"
+        onClick={requestPermission}
+      >
         Request Notification Permission
       </button>
     </>
