@@ -18,12 +18,27 @@ export default function Home() {
       const messaging = getMessaging(firebaseApp);
       const unsubscribe = onMessage(messaging, (payload) => {
         console.log("Foreground push notification received:", payload);
+        displayNotification(payload);
       });
       return () => {
         unsubscribe();
       };
     }
   }, []);
+
+  const displayNotification = (payload: any) => {
+    const { title, body } = payload.notification;
+
+    const notification = new Notification(title, {
+      body,
+      icon: "/assets/favs/android-chrome-36x36.png", // Replace with the path to your notification icon
+    });
+
+    notification.onclick = (event) => {
+      // Handle click event
+      console.log("Notification clicked:", event);
+    };
+  };
 
   const [showButton, setShowButton] = useState(true);
   const beforeInstallPrompt = useRef<null | any>(null);
@@ -67,31 +82,38 @@ export default function Home() {
   }
 
   return (
-    <>
-      {notificationPermissionStatus}
+    <div className="w-full px-2">
+      <h1 className="text-center">
+        Notification Status:{" "}
+        <span className="text-green-400">
+          {notificationPermissionStatus?.toUpperCase()}
+        </span>
+      </h1>
       <br />
-      {fcmToken}
-      <br />
-      {showButton ? (
-        <button
-          onClick={instalar}
-          className="bg-orange-600 p-4 rounded absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
-        >
-          Install PWA
-        </button>
-      ) : (
-        <p className="p-4 rounded absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
-          PWA Installed Successfully
-        </p>
-      )}
-      <br />
+      <h1 className="whitespace-break-spaces break-words">
+        FCM Token:
+        <br />
+        {fcmToken}
+      </h1>
 
-      <button
-        className="bg-blue-600 p-4 rounded absolute left-[50%] top-[60%] translate-x-[-50%] translate-y-[-50%]"
-        onClick={requestPermission}
-      >
-        Request Notification Permission
-      </button>
-    </>
+      <div className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-full text-center">
+        {showButton ? (
+          <button onClick={instalar} className="bg-orange-600 p-4 rounded">
+            Install PWA
+          </button>
+        ) : (
+          <p className="p-4 rounded">PWA Installed Successfully</p>
+        )}
+
+        {notificationPermissionStatus !== "granted" && (
+          <button
+            className="bg-blue-600 p-4 rounded mt-10"
+            onClick={requestPermission}
+          >
+            Request Notification Permission
+          </button>
+        )}
+      </div>
+    </div>
   );
 }
