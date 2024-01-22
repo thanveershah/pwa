@@ -32,13 +32,17 @@ export default function Home() {
 
   return (
     <>
-      {showButton && (
+      {showButton ? (
         <button
           onClick={instalar}
           className="bg-orange-600 p-4 rounded absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
         >
           Install PWA
         </button>
+      ) : (
+        <p className="p-4 rounded absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
+          PWA Installed Successfully
+        </p>
       )}
     </>
   );
