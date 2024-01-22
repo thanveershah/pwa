@@ -1,6 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+  const [showButton, setShowButton] = useState(true);
   const beforeInstallPrompt = useRef<null | any>(null);
 
   useEffect(() => {
@@ -23,14 +24,22 @@ export default function Home() {
     }
   }
 
+  useEffect(() => {
+    if (window.matchMedia("(display-mode: standalone)").matches) {
+      setShowButton(false);
+    }
+  }, []);
+
   return (
     <>
-      <button
-        onClick={instalar}
-        className="bg-orange-600 p-4 rounded absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
-      >
-        Install PWA
-      </button>
+      {showButton && (
+        <button
+          onClick={instalar}
+          className="bg-orange-600 p-4 rounded absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]"
+        >
+          Install PWA
+        </button>
+      )}
     </>
   );
 }
