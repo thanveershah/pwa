@@ -1,6 +1,30 @@
+import firebaseApp from "@/utils/firebase/firebase";
+import useFcmToken from "@/utils/hooks/useFormToken";
+import { getMessaging, onMessage } from "firebase/messaging";
 import { useEffect, useRef, useState } from "react";
 
+// import { getMessaging, onMessage } from "firebase/messaging";
+
+// const messaging = getMessaging();
+
 export default function Home() {
+  const { fcmToken, notificationPermissionStatus } = useFcmToken();
+  // Use the token as needed
+  fcmToken && console.log("FCM token:", fcmToken);
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  useEffect(() => {
+    if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+      const messaging = getMessaging(firebaseApp);
+      const unsubscribe = onMessage(messaging, (payload) => {
+        console.log("Foreground push notification received:", payload);
+      });
+      return () => {
+        unsubscribe();
+      };
+    }
+  }, []);
+
   const [showButton, setShowButton] = useState(true);
   const beforeInstallPrompt = useRef<null | any>(null);
 
@@ -25,10 +49,22 @@ export default function Home() {
   }
 
   useEffect(() => {
+    // onMessage(messaging, (payload) => {
+    //   console.log("Message received. ", payload);
+    // });
     if (window.matchMedia("(display-mode: standalone)").matches) {
       setShowButton(false);
     }
   }, []);
+
+  function requestPermission() {
+    console.log("Requesting permission...");
+    Notification.requestPermission().then((permission) => {
+      if (permission === "granted") {
+        console.log("Notification permission granted.");
+      }
+    });
+  }
 
   return (
     <>
@@ -44,6 +80,10 @@ export default function Home() {
           PWA Installed Successfully
         </p>
       )}
+
+      <button onClick={requestPermission}>
+        Request Notification Permission
+      </button>
     </>
   );
 }
