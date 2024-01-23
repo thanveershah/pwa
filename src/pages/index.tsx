@@ -3,16 +3,10 @@ import useFcmToken from "@/utils/hooks/useFormToken";
 import { getMessaging, onMessage } from "firebase/messaging";
 import { useEffect, useRef, useState } from "react";
 
-// import { getMessaging, onMessage } from "firebase/messaging";
-
-// const messaging = getMessaging();
-
 export default function Home() {
   const { fcmToken, notificationPermissionStatus } = useFcmToken();
-  // Use the token as needed
   fcmToken && console.log("FCM token:", fcmToken);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     if (typeof window !== "undefined" && "serviceWorker" in navigator) {
       const messaging = getMessaging(firebaseApp);
@@ -31,11 +25,10 @@ export default function Home() {
 
     const notification = new Notification(title, {
       body,
-      icon: "/assets/favs/android-chrome-36x36.png", // Replace with the path to your notification icon
+      icon: "/assets/favs/android-chrome-36x36.png",
     });
 
     notification.onclick = (event) => {
-      // Handle click event
       console.log("Notification clicked:", event);
     };
   };
@@ -64,9 +57,6 @@ export default function Home() {
   }
 
   useEffect(() => {
-    // onMessage(messaging, (payload) => {
-    //   console.log("Message received. ", payload);
-    // });
     if (window.matchMedia("(display-mode: standalone)").matches) {
       setShowButton(false);
     }
